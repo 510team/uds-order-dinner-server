@@ -80,6 +80,16 @@ INSERT INTO `level` SET name='学长师友',icon='icon-level5',lowest_score=400,
 
 
 
+CREATE TABLE `eat` (
+`open_id` varchar(100)  NOT NULL  COMMENT '用户id',
+`eat_day` varchar(100) NOT NULL   COMMENT '订单时间',
+PRIMARY KEY (`open_id`,`eat_day`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='订餐记录';
+
+DROP TABLE IF EXISTS eat;
+
+
+
 DROP TABLE IF EXISTS `background`;
 CREATE TABLE `background` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
