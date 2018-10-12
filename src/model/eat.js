@@ -26,11 +26,12 @@ module.exports = class extends think.Model {
 
     async eatPeopleList() {
         let canEat = false;
+        const today = date.toFormat(new Date(), "yyyy-MM-dd")
         return await this.join({
             table: 'user',
             join: 'left',
             on: ['open_id', 'openid']
-        }).select()
+        }).where({ eat_day: today }).select()
     }
 
 };
